@@ -30,7 +30,6 @@ This repository contains Matlab code for data loaders, undersampling functions, 
 **Our objective is to evaluate the model's generalization performance across diverse centers and scanners (Regular TASK 1), diseases (Tegular TASK 2), magnetic fields (Special TASK 1), and populations (Special TASK 2).**
 
 ![TaskText](https://github.com/CmrxRecon/CMRxRecon2025/blob/main/TaskText.png)
-![TaskImage](https://github.com/CmrxRecon/CMRxRecon2025/blob/main/TaskImage.png)
 
 **Regular TASK 1: CMR reconstruction model for multi-center multi-vendor evaluation**
 
@@ -48,6 +47,8 @@ This task primarily focuses on addressing the issue of declining reconstruction 
 **Special TASK 2:**
 
 This task primarily focuses on addressing application issues in pediatric cardiac imaging. Participants are required to train the reconstruction model on the training dataset (mainly consisting of adults over 20 years old) and achieve good multi-contrast cardiac image reconstruction results on the validation and test datasets (minors under 18 years old). Please note that to ensure the model training process is not biased by age information, we will not disclose the age of each data point in the training dataset.
+
+![TaskImage](https://github.com/CmrxRecon/CMRxRecon2025/blob/main/TaskImage.png)
 
 ## Documentation
 
