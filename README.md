@@ -18,26 +18,23 @@ Cardiac MRI (CMR) has become an essential tool for diagnosing and evaluating car
 
 ![CMRxSeries](https://github.com/CmrxRecon/CMRxRecon2025/blob/main/CMRxSeries.png)
 
-To accelerate image acquisition, CMR image reconstruction (recovering high-quality clinical interpretable images from highly under-sampled k-space data) has gained significant attention in recent years. Particularly, AI-based image reconstruction algorithms have shown great potential in improving imaging performance by utilizing highly under-sampled data. Currently, the field of CMR reconstruction lacks publicly available, standardized, and high-quality datasets for the development and assessment for AI-based CMR reconstruction. In the first run of the 'CMRxRecon' challenge (MICCAI 2023), we have provided cine and mapping data from a total of 300 subjects and the technical infrastructure as well as a baseline model for CMR reconstructions. The results of 'CMRxRecon' 2023 demonstrated that deep learning methods demonstrated significantly superior performance compared to traditional methods such as SENSE and GRAPPA in a single task scenario.
-
-As we all know, CMR imaging has the nature of multi-contrast, e.g., cardiac cine, mapping, tagging, phase-contrast, and dark-blood imaging. It also includes imaging of different anatomical views such as long-axis (2-chamber, 3-chamber, and 4-chamber), short-axis, outflow tract, and aortic (cross-sectional and sagittal views). Additionally, accelerated imaging trajectories, including uniformly undersampling and variable-density sampling, are employed. **Unfortunately, conventional CNN-based reconstruction models often require training and deployment for each specific imaging scenario (imaging sequence, view, and device vendor), limiting their clinical application in the real world.**
-
-Thus, in this second run of the CMR reconstruction challenge we aim to make an important step towards clinical implementation by extending the challenge scope in two directions:
-**1) Trustworthy reconstruction on multi-contrast CMR imaging (two will be unseen in the training dataset) using a universal pre-trained reconstruction model;**
-**2) Robust reconstruction with diverse k-space trajectory and various acceleration factors using a universal model.**  
+We aim to make an important leap towards real-world clinical scenarios by extending the challenge scope in two directions:
+**1) To evaluate the robustness and generalization performance of reconstruction foundation models in more than 5 centers and 10 scanners, all those data are unseen during the training stage.**
+**2) To evaluate the clinical performance of reconstruction foundation models under no less than 5 cardiovascular diseases (e.g., hypertrophic cardiomyopathy, dilated cardiomyopathy, myocardial infarction, coronary artery disease, arrhythmias), all those data are unseen during the training stage.**
 
 This repository contains Matlab code for data loaders, undersampling functions, evaluation metrics, and reference implementations of simple baseline methods. It also contains implementations for methods in some of the publications of the CMRxRecon project.
 
 ## Challenge tasks
-The 'CMRxRecon2024' challenge includes two independent tasks. Each team can choose to participate one of them or both:
+**The 'CMRxRecon2025' challenge includes two regular tasks (announced during MICCAI annual meeting) and two special tasks (announced during SCMR annual meeting). The tasks are awarded independently, so each team can choose to participate any one of them.** For each task, participants can submit one model each (which can be four different models, or they can submit just one model, but they must submit it separately for each task). Please note that for the four tasks, the training dataset we provide is the same; however, the validation and test datasets are different for each of the four tasks. 
 
-**TASK 1: Multi-contrast CMR reconstruction**
+**Our objective is to evaluate the model's generalization performance across diverse centers and scanners (Regular TASK 1), diseases (Tegular TASK 2), magnetic fields (Special TASK 1), and populations (Special TASK 2).**
 
-**1) Goal:** To develop a contrast-universal model that can 1) provide high-quality image reconstruction for highly-accelerated uniform undersampling (acceleration factors are 4x, 8x and 10x, ACS not included for calculations); 2) being able to process multiple contrast reconstructions with different sequences, views, and scanning protocols using a single universal model. The proposed method is supposed to offer a unified framework that can handle various imaging contrasts, allowing for faster and more robust reconstructions across different CMR protocols.
+![TaskText](https://github.com/CmrxRecon/CMRxRecon2025/blob/main/TaskText.png)
+![TaskImage](https://github.com/CmrxRecon/CMRxRecon2025/blob/main/TaskImage.png)
 
-**2) Note:** In TASK 1, participants are allowed to train **three individual contrast-universal models** to respectively reconstruct multi-contrast data at the aforementioned three acceleration factors; **TrainingSet includes Cine, Aorta, Mapping, and Tagging; ValidationSet and TestSet include Cine, Aorta, Mapping, Tagging, and other two unseen contrasts (Flow2d and BlackBlood)**; the data size of Cine, Aorta, Mapping, Tagging, and Flow2d is 5D (nx,ny,nc,nz,nt); the data size of BlackBlood is 4D (nx,ny,nc,nz); **the size of all undersampling masks is 2D (nx,ny)**, the central 16 lines (ny) are always fully sampled to be used as autocalibration signals (ACS).
+**Regular TASK 1: CMR reconstruction model for multi-center evaluation**
 
-![Task 1](https://github.com/CmrxRecon/CMRxRecon2024/blob/main/Overview_Task1.png)
+This task primarily focuses on addressing the issue of declining generalization performance between multiple centers. Participants are required to train the reconstruction model on the training dataset and achieve good multi-contrast cardiac image reconstruction results on the validation and test datasets. It is important to note that for this task, we will include data from two entirely new centers in the validation set (not present in the training set), and the test set will contain data from five entirely new centers (not present in the training set, including the two centers that appeared in the validation set).
 
 **TASK 2: Random sampling CMR reconstruction**
 
@@ -49,7 +46,7 @@ The 'CMRxRecon2024' challenge includes two independent tasks. Each team can choo
 
 ## Documentation
 
-### The CMRxRecon2024 Dataset
+### The CMRxRecon2025 Dataset
 A total of 330 healthy volunteers are recruited for multi-contrast CMR imaging in our imaging center (3.0T Siemens Vida). **The dataset include multi-contrast k-space data, consist of cardiac cine, T1/T2mapping, tagging, phase-contrast (i.e., flow2d), and dark-blood imaging. It also includes imaging of different anatomical views like long-axis (2-chamber, 3-chamber, and 4-chamber), short-axis (SAX), left ventricul outflow tract (LVOT), and aorta (transversal and sagittal views)**.
 
 ![Task 1&2 Image](https://github.com/CmrxRecon/CMRxRecon2024/blob/main/Task1&2_ContrastImageCMR.png)
@@ -67,7 +64,7 @@ Test cases include fully sampled k-space data, undersampled k-space data, sampli
 ## Package Structure
 * `CMRxReconDemo`: contains parallel imaging reconstruction code
 * `ChallengeDataFormat`: explains the challenge data and the rules for data submission
-* `CMRxReconMaskGeneration`: contains code for varied undersampling mask generation in Task 1&2
+* `CMRxReconMaskGeneration`: contains code for varied undersampling mask generation in different tasks
 * `Evaluation`: contains image quality evaluation code for validation and testing
 * `Submission`: contains the structure for challenge submission
 
@@ -75,7 +72,7 @@ Test cases include fully sampled k-space data, undersampled k-space data, sampli
 The code is provided to support reproducible research. If the code is giving syntax error in your particular configuration or some files are missing then you may open an issue or email us at CMRxRecon@outlook.com
 
 ## Publication references
-You are free to use and/or refer to the CMRxRecon challenge and datasets in your own research after the embargo period (Dec 2024), provided that you cite the following manuscripts: 
+You are free to use and/or refer to the CMRxRecon challenge and datasets in your own research after the embargo period (Dec 2025), provided that you cite the following manuscripts: 
 
 **Reference of the CMR imaging acquisition protocol: **
 1.	Wang C, Lyu J, Wang S, et al. CMRxRecon: A publicly available k-space dataset and benchmark to advance deep learning for cardiac MRI. Scientific Data, 2024, 11(1): 687.
