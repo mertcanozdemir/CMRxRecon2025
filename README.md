@@ -5,9 +5,9 @@
 The CMRxRecon2025 (also known as CMRxUniversalRecon) Challenge is a part of the 27th International Conference on Medical Image Computing and Computer Assisted Intervention, MICCAI 2024, which will be held from October 6th to 10th 2024 in Marrakesh, Morocco.
 
 
-[Website](https://cmrxrecon.github.io/2024) |
-[Dataset](https://www.synapse.org/#!Synapse:syn57407073/datasets/) |
-[GitHub](https://github.com/CmrxRecon/CMRxRecon2024/) |
+[Website](https://cmrxrecon.github.io/2025) |
+[Dataset](TODO) |
+[GitHub](https://github.com/CmrxRecon/CMRxRecon2025/) |
 [Publications](#Publication-references)
 
 ## Motivation
