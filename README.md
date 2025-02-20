@@ -32,34 +32,37 @@ This repository contains Matlab code for data loaders, undersampling functions, 
 ![TaskText](https://github.com/CmrxRecon/CMRxRecon2025/blob/main/TaskText.png)
 ![TaskImage](https://github.com/CmrxRecon/CMRxRecon2025/blob/main/TaskImage.png)
 
-**Regular TASK 1: CMR reconstruction model for multi-center evaluation**
+**Regular TASK 1: CMR reconstruction model for multi-center multi-vendor evaluation**
 
 This task primarily focuses on addressing the issue of declining generalization performance between multiple centers. Participants are required to train the reconstruction model on the training dataset and achieve good multi-contrast cardiac image reconstruction results on the validation and test datasets. It is important to note that for this task, we will include data from two entirely new centers in the validation set (not present in the training set), and the test set will contain data from five entirely new centers (not present in the training set, including the two centers that appeared in the validation set).
 
-**TASK 2: Random sampling CMR reconstruction**
+**Regular TASK 2: CMR reconstruction model for multi-disease evaluation**
 
-**1) Goal:** To develop a sampling-universal model that can robustly reconstruct CMR images 1) from different k-space trajectories (uniform, Guassian, and pseudo radial undersampling with temporal/parametric interleaving); 2) at different acceleration factors (acceleration factors from 4x to 24x, ACS not included for calculations). The proposed method is supposed to leverage deep learning algorithms to exploit the potential of random sampling, enabling faster acquisition times while maintaining high-quality image reconstructions.
+This task primarily focuses on evaluating the reliability of the model in applications involving different cardiovascular diseases. Participants are required to train the reconstruction model on the training dataset and achieve good performance in disease applications on the validation and test datasets. It is important to note that for this task, we will include data for two diseases that have not appeared in the training set in the validation set, and the test set will contain data for five diseases that have not appeared in the training set (including the two diseases that appeared in the validation set).
+Please note that to ensure the model training process is not biased by the type of disease, we will not disclose the disease information for each data point in the training and validation dataset.
 
-**2) Note:** In TASK 2, participants are allowed to train **only one universal model** to reconstruct various data at the different undersampling scenarios (including different k-space trajectories: uniform, Guassian, and pseudo radial undersampling with temporal/parametric interleaving; and different acceleration factors: 4x, 8x, 12x, 16x, 20x, 24x, ACS not included for calculations); **TrainingSet includes Cine, Aorta, Mapping, and Tagging; ValidationSet and TestSet also include Cine, Aorta, Mapping, and Tagging**; the data size of Cine, Aorta, Mapping, and Tagging is 5D (nx,ny,nc,nz,nt); **the size of all undersampling masks is 3D (nx,ny,nt)**, the central 16 lines (ny, in ktUniform and ktGaussian) or central 16x16 regions (nx*ny, in ktRadial) are always fully sampled to be used as autocalibration signals (ACS).
+**Special TASK 1:**
 
-![Task 2](https://github.com/CmrxRecon/CMRxRecon2024/blob/main/Overview_Task2.png)
+This task primarily focuses on addressing the issue of declining reconstruction generalization performance under different magnetic field strengths, especially those not included in the training data. Participants are required to train the reconstruction model on the training dataset (mainly consisting of 1.5T and 3.0T) and achieve good multi-contrast cardiac image reconstruction results on the validation and test datasets (5.0T).
+
+**Special TASK 2:**
+
+This task primarily focuses on addressing application issues in pediatric cardiac imaging. Participants are required to train the reconstruction model on the training dataset (mainly consisting of adults over 20 years old) and achieve good multi-contrast cardiac image reconstruction results on the validation and test datasets (minors under 18 years old). Please note that to ensure the model training process is not biased by age information, we will not disclose the age of each data point in the training dataset.
 
 ## Documentation
 
 ### The CMRxRecon2025 Dataset
-A total of 330 healthy volunteers are recruited for multi-contrast CMR imaging in our imaging center (3.0T Siemens Vida). **The dataset include multi-contrast k-space data, consist of cardiac cine, T1/T2mapping, tagging, phase-contrast (i.e., flow2d), and dark-blood imaging. It also includes imaging of different anatomical views like long-axis (2-chamber, 3-chamber, and 4-chamber), short-axis (SAX), left ventricul outflow tract (LVOT), and aorta (transversal and sagittal views)**.
+A total of 600 volunteers are recruited for multi-protocal CMR imaging in different imaging centers. **The dataset includes multi-coil, multi-modality, multi-view k-space data from 5+ medical centers and 10+ MRI scanners from GE, Philips, Siemens, United Imaging. Their field strengths include 1.5T, 3.0T, and 5.0T (for special tasks). They also cover many different diseases, such as hypertrophic cardiomyopathy, dilated cardiomyopathy, myocardial infarction, coronary artery disease, and arrhythmias.**
 
-![Task 1&2 Image](https://github.com/CmrxRecon/CMRxRecon2024/blob/main/Task1&2_ContrastImageCMR.png)
-
-**The released dataset includes 200 training data, 60 validation data, and 70 test data.**
+**The released dataset includes 200 cases for training, 100 cases for validation, and 300 cases for test.**
 
 Training cases including fully sampled k-space data and sampling trajectories will be provided in '.mat' format.
 
-Validation cases include under-sampled k-space data, sampling trajectories, and autocalibration signals (ACS, 16 lines or 16x16 regions) with various acceleration factors in '.mat' format.
+Validation cases include under-sampled k-space data, sampling trajectories, and autocalibration signals (ACS, 20 lines or 20x20 regions) with various acceleration factors in '.mat' format.
 
-Test cases include fully sampled k-space data, undersampled k-space data, sampling trajectories, and autocalibration signals (ACS, 16 lines or 16x16 regions). Test cases will not be released before the challenge ends.
+Test cases include fully sampled k-space data, undersampled k-space data, sampling trajectories, and autocalibration signals (ACS, 20 lines or 20x20 regions). Test cases will not be released before the challenge ends.
 
-![Task 1&2 Mask](https://github.com/CmrxRecon/CMRxRecon2024/blob/main/Task1&2_MaskCMR.png)
+![DataImage](https://github.com/CmrxRecon/CMRxRecon2025/blob/main/DataImage.png)
 
 ## Package Structure
 * `CMRxReconDemo`: contains parallel imaging reconstruction code
