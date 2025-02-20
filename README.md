@@ -2,7 +2,7 @@
 
 ## About
 **Welcome to the Cardiac MRI Reconstruction Challenge 2025 (CMRxRecon2025)！**  
-The CMRxRecon2025 (also known as CMRxUniversalRecon) Challenge is a part of the 27th International Conference on Medical Image Computing and Computer Assisted Intervention, MICCAI 2024, which will be held from October 6th to 10th 2024 in Marrakesh, Morocco.
+The CMRxRecon2025 (Towards Foundation Model) Challenge is a part of the 28th International Conference on Medical Image Computing and Computer Assisted Intervention, MICCAI 2025, which will be held from September 23rd to 27th 2025 in Daejeon, Republic of Korea.
 
 
 [Website](https://cmrxrecon.github.io/2025) |
@@ -11,10 +11,10 @@ The CMRxRecon2025 (also known as CMRxUniversalRecon) Challenge is a part of the 
 [Publications](#Publication-references)
 
 ## Motivation
-The objective of establishing the CMRxUniversalRecon challenge (Toward Universal Reconstruction) is to provide a benchmark that enables the broader research community to contribute to the important work of accelerated CMR imaging with universal approaches that allow more diverse applications and better performance in real-world deployment in various environments.
+The objective of establishing the CMRx series challenges is to provide a benchmark that enables the research community to contribute to the work of accelerated CMR imaging with universal approaches that allow more diverse applications and better performance in real-world deployment in various environments. The previous CMRxRecon2023 and CMRxRecon2024 datasets did not cover multiple centers, multiple vendors, and multiple diseases. Therefore, this year we aim to fill these gaps and make an important leap towards real-world clinical scenarios.
 
 ## Background
-Cardiac magnetic resonance imaging (CMR) has emerged as a crucial imaging technique for diagnosing cardiac diseases, thanks to its excellent soft tissue contrast and non-invasive nature. **However, a notable limitation of MRI is its slow imaging speed, which causes patient discomfort and introduces motion artifacts into the images.**
+Cardiac MRI (CMR) has become an essential tool for diagnosing and evaluating cardiovascular diseases, offering multi-parametric, high-resolution anatomical and functional data. CMR reconstruction from highly under-sampled k-space data has gained significant attention in recent research. Numerous AI-based image reconstruction algorithms have shown potential in improving imaging performance and patient experience in recovering high-quality images from aggressively undersampled k-space measurements. However, the complexity and diversity of CMR scans in real-world applications, involving various image contrasts, sampling trajectories, equipment vendors, anatomical structures, and disease types, present a great challenge for existing AI-based reconstruction methods, which are usually developed for only one or a few specific scanning settings. In practice, there are often inevitable distribution mismatches between the training data and target data, due to the diversities listed above. **Therefore, building and validating universal and robust reconstruction models for handling these diversities remains a critical technical challenge for multi-parametric CMR imaging.**
 
 To accelerate image acquisition, CMR image reconstruction (recovering high-quality clinical interpretable images from highly under-sampled k-space data) has gained significant attention in recent years. Particularly, AI-based image reconstruction algorithms have shown great potential in improving imaging performance by utilizing highly under-sampled data. Currently, the field of CMR reconstruction lacks publicly available, standardized, and high-quality datasets for the development and assessment for AI-based CMR reconstruction. In the first run of the 'CMRxRecon' challenge (MICCAI 2023), we have provided cine and mapping data from a total of 300 subjects and the technical infrastructure as well as a baseline model for CMR reconstructions. The results of 'CMRxRecon' 2023 demonstrated that deep learning methods demonstrated significantly superior performance compared to traditional methods such as SENSE and GRAPPA in a single task scenario.
 
