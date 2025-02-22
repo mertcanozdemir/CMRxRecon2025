@@ -40,11 +40,11 @@ This task primarily focuses on addressing the issue of declining generalization 
 This task primarily focuses on evaluating the reliability of the model in applications involving different cardiovascular diseases. Participants are required to train the reconstruction model on the training dataset and achieve good performance in disease applications on the validation and test datasets. It is important to note that for this task, we will include data for two diseases that have not appeared in the training set in the validation set, and the test set will contain data for five diseases that have not appeared in the training set (including the two diseases that appeared in the validation set).
 Please note that to ensure the model training process is not biased by the type of disease, we will not disclose the disease information for each data point in the training and validation dataset.
 
-**Special TASK 1:**
+**Special TASK 1: CMR reconstruction model for 5T evaluation**
 
 This task primarily focuses on addressing the issue of declining reconstruction generalization performance under different magnetic field strengths, especially those not included in the training data. Participants are required to train the reconstruction model on the training dataset (mainly consisting of 1.5T and 3.0T) and achieve good multi-contrast cardiac image reconstruction results on the validation and test datasets (5.0T).
 
-**Special TASK 2:**
+**Special TASK 2: CMR reconstruction model for pediatric imaging evaluation**
 
 This task primarily focuses on addressing application issues in pediatric cardiac imaging. Participants are required to train the reconstruction model on the training dataset (mainly consisting of adults over 20 years old) and achieve good multi-contrast cardiac image reconstruction results on the validation and test datasets (minors under 18 years old). Please note that to ensure the model training process is not biased by age information, we will not disclose the age of each data point in the training dataset.
 
