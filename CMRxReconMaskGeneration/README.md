@@ -6,6 +6,7 @@ Folder `TaskAll`: The matlab script for varied mask generation for TrainingSet (
 * `MaskGeneration_Demo`: This is a demo to generate typical 3D masks for understanding their properties
 
 ===========================
+
 ## Matlab code for generating undersampled kspace using the fully sampled kspace and 2D undersampling mask
 kus = kspace_full .* mask;
 
