@@ -67,7 +67,6 @@ Test cases include fully sampled k-space data, undersampled k-space data, sampli
 
 ## Package Structure
 * `CMRxReconDemo`: contains parallel imaging reconstruction code
-* `ChallengeDataFormat`: explains the challenge data and the rules for data submission
 * `CMRxReconMaskGeneration`: contains code for varied undersampling mask generation in different tasks
 * `Evaluation`: contains image quality evaluation code for validation and testing
 * `Submission`: contains the structure for challenge submission
