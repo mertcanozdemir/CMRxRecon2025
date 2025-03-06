@@ -8,7 +8,7 @@ Folder `TaskAll`: The matlab script for varied mask generation for TrainingSet (
 ===========================
 
 ## Matlab code for generating undersampled kspace using the fully sampled kspace and 2D undersampling mask
-kus = kspace_full .* mask;
+kus = kspace .* mask;
 
 ## Matlab code for generating undersampled kspace using the fully sampled kspace and 3D k-t undersampling mask
-mask_5D = reshape(mask, [nx,ny,1,1,nt]); kus = kspace_full .* mask_5D;
+mask_5D = reshape(mask, [nx,ny,1,1,nt]); kus = kspace .* mask_5D;
