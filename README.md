@@ -29,7 +29,7 @@ This repository contains Matlab code for data loaders, undersampling functions, 
 
 **Our objective is to evaluate the model's generalization performance across diverse centers and scanners (Regular TASK 1), diseases (Tegular TASK 2), magnetic fields (Special TASK 1), and populations (Special TASK 2).**
 
-![TaskText](https://github.com/CmrxRecon/CMRxRecon2025/blob/main/TaskText.png)
+![TaskText](https://github.com/CmrxRecon/CMRxRecon2025/blob/main/TaskText2025.png)
 
 **Regular TASK 1: CMR reconstruction model for multi-center multi-vendor evaluation**
 
