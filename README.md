@@ -48,7 +48,7 @@ This task primarily focuses on addressing the issue of declining reconstruction 
 
 This task primarily focuses on addressing application issues in pediatric cardiac imaging. Participants are required to train the reconstruction model on the training dataset (mainly consisting of adults over 20 years old) and achieve good multi-contrast cardiac image reconstruction results on the validation and test datasets (minors under 18 years old). Please note that to ensure the model training process is not biased by age information, we will not disclose the age of each data point in the training dataset.
 
-![TaskImage](https://github.com/CmrxRecon/CMRxRecon2025/blob/main/TaskImage.png)
+![TaskImage](https://github.com/CmrxRecon/CMRxRecon2025/blob/main/TaskImage2025.png)
 
 ## Documentation
 
