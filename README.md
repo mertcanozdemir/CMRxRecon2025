@@ -16,7 +16,7 @@ The objective of establishing the CMRx series challenges is to provide a benchma
 ## Background
 Cardiac MRI (CMR) has become an essential tool for diagnosing and evaluating cardiovascular diseases, offering multi-parametric, high-resolution anatomical and functional data. CMR reconstruction from highly under-sampled k-space data has gained significant attention in recent research. Numerous AI-based image reconstruction algorithms have shown potential in improving imaging performance and patient experience in recovering high-quality images from aggressively undersampled k-space measurements. However, the complexity and diversity of CMR scans in real-world applications, involving various image contrasts, sampling trajectories, equipment vendors, anatomical structures, and disease types, present a great challenge for existing AI-based reconstruction methods, which are usually developed for only one or a few specific scanning settings. In practice, there are often inevitable distribution mismatches between the training data and target data, due to the diversities listed above. **Therefore, building and validating universal and robust reconstruction models for handling these diversities remains a critical technical challenge for multi-parametric CMR imaging.**
 
-![CMRxSeries](https://github.com/CmrxRecon/CMRxRecon2025/blob/main/CMRxSeries.png)
+![CMRxSeries](https://github.com/CmrxRecon/CMRxRecon2025/blob/main/CMRxSeries2025.png)
 
 We aim to make an important leap towards real-world clinical scenarios by extending the challenge scope in two directions:
 **1) To evaluate the robustness and generalization performance of reconstruction foundation models in more than 5 centers and 10 scanners, all those data are unseen during the training stage.**
