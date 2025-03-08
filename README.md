@@ -6,7 +6,7 @@ The CMRxRecon2025 (Towards Foundation Model) Challenge is a part of the 28th Int
 
 
 [Website](https://cmrxrecon.github.io/2025) |
-[Dataset](TODO) |
+[Dataset](https://www.synapse.org/Synapse:syn64952554/datasets/) |
 [GitHub](https://github.com/CmrxRecon/CMRxRecon2025/) |
 [Publications](#Publication-references)
 
