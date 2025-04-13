@@ -1,6 +1,6 @@
 %% The matlab script for mask generation for TrainingSet (CMRxRecon MICCAI2025)
 % Author: Zi Wang (wangziblake@gmail.com)
-% April 3, 2025
+% April 13, 2025
 
 % If you want to use the code, please cite the following paper:
 % [1] Zi Wang et al., CMRxRecon2024: A multimodality, multiview k-space
@@ -23,6 +23,8 @@ if length(size(kspace_full)) == 5
     nt = size(kspace_full, 5);
 elseif length(size(kspace_full)) == 4
     nt = 1;
+else
+	nt = 1;
 end
 ncalib = 20;
 
