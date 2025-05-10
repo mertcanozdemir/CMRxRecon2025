@@ -8,7 +8,7 @@ Name your zip file as `Submission.zip`.
 ### Directory Structure
 For each modality, follow this structure:
 `{Task}/MultiCoil/{Modality}/ValidationSet/{UnderSample_Task}/{Center}/{Vendor}/PXXX/{ModalityFileName}_kus_{SamplePatternName}{R}.mat`
-
+- Note:`{Task}:TaskR1,TaskR2,TaskS1,TaskS2`
 
 ### Modalities
 - **Modalities:** 'BlackBlood', 'Cine', 'Flow2d', 'LGE','Mapping', 'Perfusion', 'T1rho', 'T1w', 'T2w'
