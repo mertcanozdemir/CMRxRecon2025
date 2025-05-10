@@ -1,4 +1,4 @@
-%% This is a demo to generate ZF recon results into the Submission folder
+%% This is a demo to generate SENSE recon results into the Submission folder
 % MICCAI "CMRxRecon" challenge 2025
 % 2023.03.06 @ fudan university
 % Email: wangcy@fudan.edu.cn
