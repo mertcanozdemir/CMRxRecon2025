@@ -7,7 +7,7 @@ Name your zip file as `Submission.zip`.
 
 ### Directory Structure
 For each modality, follow this structure:
-{Task}/MultiCoil/{Modality}/ValidationSet/{UnderSample_Task}/{Center}/{Vendor}/PXXX/{ModalityFilename}_kus_{SamplePatternName}{R}.mat
+{Task}/MultiCoil/{Modality}/ValidationSet/{UnderSample_Task}/{Center}/{Vendor}/PXXX/{ModalityFileName}_kus_{SamplePatternName}{R}.mat
 
 
 ### Modalities
