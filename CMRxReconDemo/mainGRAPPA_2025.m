@@ -3,10 +3,9 @@
 % 2023.03.06 @ fudan university
 % Email: wangcy@fudan.edu.cn
 % Revise: Huang Mingkai
-
 clc; clear;
 
-%% add paths
+%% add paths 
 addpath(genpath('./GRAPPA'))
 addpath(genpath('./ESPIRiT'))
 addpath('./utils');
@@ -14,7 +13,7 @@ addpath('./utils');
 %% set info
 coilInfo     = 'MultiCoil/';            % singleCoil not used for ZF recon
 setName      = 'ValidationSet/';          % options: 'ValidationSet/','TestSet/'
-taskTypeList = {'TaskR1'};
+taskTypeList = {'TaskS2'};
 dataTypeList = {'Cine','BlackBlood','T1w','T2w','Flow2d','Mapping','Perfusion','LGE','T1rho'};%
 
 % input and output root folders
@@ -23,17 +22,17 @@ mainSavePath = '/Path/to/your/save/dir';
 
 %% parameters
 sampleStatusType = 1;  % 0: full k-space; 1: undersampled
-reconType        = 2;  % 2: SENSE recon
+reconType        = 1;  % 1: GRAPPA recon
 imgShow          = 0;  % 0: no display
 
-%% generate SENSE recon for all modalities and tasks
+%% generate GRAPPA recon for all modalities and tasks
 for dt = 1:numel(dataTypeList)
     dataType = dataTypeList{dt};
     for tt = 1:numel(taskTypeList)
         taskType = taskTypeList{tt};
-        fprintf('Running SENSE recon for %s, %s...\n', dataType, taskType);
+        fprintf('Running GRAPPA recon for %s, %s...\n', dataType, taskType);
         runRecon2025(basePath, mainSavePath, coilInfo, setName, dataType, taskType, sampleStatusType, reconType, imgShow);
     end
 end
 
-disp('All SENSE recon results generated into Submission folder!');
+disp('All GRAPPA recon results generated into Submission folder!');

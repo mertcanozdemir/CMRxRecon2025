@@ -1,6 +1,8 @@
 %% This is a demo to generate ZF recon results into the Submission folder
 % MICCAI "CMRxRecon" challenge 2025
-
+% 2023.03.06 @ fudan university
+% Email: wangcy@fudan.edu.cn
+% Revise: Huang Mingkai
 clc; clear;
 
 %% add paths (for utilities if needed)
@@ -9,12 +11,12 @@ addpath('./utils');
 %% set info
 coilInfo     = 'MultiCoil/';            % singleCoil not used for ZF recon
 setName      = 'ValidationSet/';          % options: 'ValidationSet/','TestSet/'
-taskTypeList = {'TaskS2'};
+taskTypeList = {'TaskR1'};
 dataTypeList = {'Cine','BlackBlood','T1w','T2w','Flow2d','Mapping','Perfusion','LGE','T1rho'};%
 
 % input and output root folders
-basePath     = '/SSDHome/share/ChallengeData_ValSetSub/';
-mainSavePath = '/SSDHome/share/ZF_for_Validation/';
+basePath     = '/Path/to/ChallengeData';
+mainSavePath = '/Path/to/your/save/dir';
 
 %% parameters
 sampleStatusType = 1;  % 0: full k-space; 1: undersampled

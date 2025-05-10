@@ -1,5 +1,8 @@
 %% This is a demo to generate validation results into the submission folder
 % MICCAI "CMRxRecon" challenge 2025
+% 2023.03.06 @ fudan university
+% Email: wangcy@fudan.edu.cn
+% Revise: Huang Mingkai
 % Updated directory structure: Task -> Center -> Vendor -> Patient -> .mat
 clc; clear;
 
@@ -7,13 +10,13 @@ clc; clear;
 addpath('./utils');
 
 % set your data directories
-basePath     = '/SSDHome/share/ChallengeData_Validation/';    % superior directory of 'MultiCoil/'
-mainSavePath = '/SSDHome/share/GroundTruth_for_Validation/';     % output path
-taskType     = 'TaskS2';                      % options: 'Task1', 'Task2'
+basePath     = '/Path/to/ChallengeData';    % superior directory of 'MultiCoil/'
+mainSavePath = '/Path/to/your/save/dir';     % output path
+taskType     = 'TaskR1';                      % options: 'TaskR1', 'TaskR2','TaskS1','TaskS2'
 
 %% fixed settings
 dataTypeList = {'Cine','BlackBlood','T1w','T2w','Mapping','Flow2d','Perfusion','LGE','T1rho'};
-setName      = 'ValidationSet/';             % or 'TestSet/'
+setName      = 'ValidationSet/';          
 coilInfo     = 'MultiCoil/';
 
 %% traverse data types

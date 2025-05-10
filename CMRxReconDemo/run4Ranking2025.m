@@ -44,7 +44,7 @@ else
 end
 
 % coil-combine via sum-of-squares
-sosImg = squeeze(sos(img));
+sosImg = squeeze(sos(img,3));
 
 % if single slice, ensure 4D shape
 if sz == 1
