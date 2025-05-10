@@ -11,7 +11,7 @@ addpath(genpath('./ESPIRiT'))
 addpath('./utils');
 
 %% set info
-coilInfo     = 'MultiCoil/';            % singleCoil not used for ZF recon
+coilInfo     = 'MultiCoil/';             % singleCoil is not avalaible for PI recon
 setName      = 'ValidationSet/';          % options: 'ValidationSet/','TestSet/'
 taskTypeList = {'TaskS2'};
 dataTypeList = {'Cine','BlackBlood','T1w','T2w','Flow2d','Mapping','Perfusion','LGE','T1rho'};%
@@ -20,7 +20,19 @@ dataTypeList = {'Cine','BlackBlood','T1w','T2w','Flow2d','Mapping','Perfusion','
 basePath     = '/Path/to/ChallengeData';
 mainSavePath = '/Path/to/your/save/dir';
 
-%% parameters
+%% parameter meaning
+% sampleStatusType = 0 means full kspace data
+% sampleStatusType = 1 means subsampled data
+
+% reconType = 0: perform zero-filling recon
+% reconType = 1: perform GRAPPA recon
+% reconType = 2: perform SENSE recon
+% reconType = 3: perform both GRAPPA and SENSE recon
+
+% imgShow = 0: ignore image imshow
+% imgShow = 1: image imshow
+
+%% GRAPPA Recon
 sampleStatusType = 1;  % 0: full k-space; 1: undersampled
 reconType        = 1;  % 1: GRAPPA recon
 imgShow          = 0;  % 0: no display
