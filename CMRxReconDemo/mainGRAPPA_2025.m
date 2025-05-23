@@ -43,7 +43,7 @@ for dt = 1:numel(dataTypeList)
     for tt = 1:numel(taskTypeList)
         taskType = taskTypeList{tt};
         fprintf('Running GRAPPA recon for %s, %s...\n', dataType, taskType);
-        runRecon2025(basePath, mainSavePath, coilInfo, setName, dataType, taskType, sampleStatusType, reconType, imgShow);
+        runRecon_2025(basePath, mainSavePath, coilInfo, setName, dataType, taskType, sampleStatusType, reconType, imgShow);
     end
 end
 
