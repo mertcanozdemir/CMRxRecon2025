@@ -1,4 +1,4 @@
-function img4ranking = run4Ranking2025(img,filetype)
+function img4ranking = run4Ranking_2025(img,filetype)
 % to reduce the computing burden and space, we only evaluate the central 2 slices
 % For cine: use the first 3 time frames for ranking!
 % For mapping: we need all weighting for ranking!
