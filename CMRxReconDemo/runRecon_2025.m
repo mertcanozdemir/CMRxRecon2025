@@ -1,4 +1,4 @@
-function runRecon2025(basePath, mainSavePath, coilInfo, setName, dataType, taskType, sampleStatusType, reconType, imgShow)
+function runRecon_2025(basePath, mainSavePath, coilInfo, setName, dataType, taskType, sampleStatusType, reconType, imgShow)
 %RECON2025 Batch reconstruction for CMRxRecon 2025 with updated directory structure
 %   Directory: basePath/coilInfo/dataType/setName/[FullSample|UnderSample_taskType]/Center/Vendor/Patient/*.mat
 % inputs:
