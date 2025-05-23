@@ -64,7 +64,7 @@ for iType = 1:numel(dataTypeList)
 
                     % image reconstruction and ranking
                     img = ifft2c(kspace);
-                    img4ranking = run4Ranking2025(img, fileInfo.name);
+                    img4ranking = run4Ranking_2025(img, fileInfo.name);
 
                     % prepare save directory mirroring input structure
                     saveDir = fullfile(mainSavePath, taskType,coilInfo, dataType, setName, ['FullSample_',taskType], centerInfo.name, vendorInfo.name, patientInfo.name);
