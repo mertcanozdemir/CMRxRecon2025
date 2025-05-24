@@ -5,7 +5,7 @@ slice and one frame at a time and some useful data transforms to work with the d
 Each partition (train, validation or test) of the CMRxRecon2025 data is distributed as a set of mat files, such that each mat file contains data from one case with multiple slices and time frames. The set of fields and attributes in these mat files depends on the track (multi-coil) and the data partition.
 
 ## main
-You can turn to main.py to see the demo recon using fastMRI or turn to ShowCase.ipynb to see the visualisation directly.
+You can turn to ShowCase.ipynb to see the visualisation directly.
 
 
 ## functions
