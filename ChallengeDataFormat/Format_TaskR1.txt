@@ -121,8 +121,8 @@ ChallengeData_ValSet
 1. Rules and notes
 
 1) To ensure the fairness of this challenge, you are only allowed to use  the datasets provided by fastMRI, CMRxRecon2023, and CMRxRecon2024,CMRxRecon2025. Data augmentation based on the training dataset is allowed.
-2) In TASK 1, ValidationSet  include Cine, BlackBlood,Flow2d, LGE,  Mapping, T1rho, T1w, T2w.
-3) In TASK 1, the data size of Cine, Flow2d, LGE,  Mapping, T1rho is 5D (nx,ny,nc,nz,nt); the data size of BlackBlood, T1w, T2w is 4D (nx,ny,nc,nz).
+2)  ValidationSet  include Cine, BlackBlood,Flow2d, LGE,  Mapping, T1rho, T1w, T2w.
+3) The data size of Cine, Flow2d, LGE,  Mapping, T1rho is 5D (nx,ny,nc,nz,nt); the data size of BlackBlood, T1w, T2w is 4D (nx,ny,nc,nz).
 ===========================
 
 ===========================
@@ -130,7 +130,7 @@ ChallengeData_ValSet
 
 Taking multi-coil long-axis (LAX) cine as an example, the format of data is as follows:
 
-Data in folder 'UnderSample_Task1': cine_lax_kus_xxx.mat 
+Data in folder 'UnderSample_TaskR1': cine_lax_kus_xxx.mat 
 # cine with long-axis view (including 3CH, 2CH, and 4CH views within the nz dimension). 
 # 'xxx' is the corresponding undersampling scenarios. For example, 'Uniform4' means uniform undersampling at acceleration factor 4x (ACS not included for calculations)
 # variable name:  
@@ -142,7 +142,7 @@ Data in folder 'UnderSample_Task1': cine_lax_kus_xxx.mat
 -nz: slice number (for SAX) or slice group (for LAX, i.e., 3CH, 2CH, and 4CH views)
 -nt: temporal/parametric frame 
 
-Data in folder 'Mask_Task1': cine_lax_mask_xxx.mat 
+Data in folder 'Mask_TaskR1': cine_lax_mask_xxx.mat 
 # undersampling mask with long-axis view, the mask is fixed among different nc and nz. But the mask is interleaved along nt.
 # 'xxx' is the corresponding undersampling scenarios. For example, 'ktUniform4' means uniform undersampling with temporal interleaving at acceleration factor 4x (ACS not included for calculations)
 # variable name:  
@@ -154,7 +154,7 @@ Data in folder 'Mask_Task1': cine_lax_mask_xxx.mat
 ===========================
 
 ===========================
-3. Matlab code for generating undersampled kspace using the fully sampled kspace and 3D k-t undersampling mask in Task 2
+3. Matlab code for generating undersampled kspace using the fully sampled kspace and 3D k-t undersampling mask in TaskR1
 
 mask_5D = reshape(mask, [nx,ny,1,1,nt]);
 kus = kspace_full .* mask_5D;
